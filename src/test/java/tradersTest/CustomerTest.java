@@ -52,6 +52,13 @@ public class CustomerTest {
         customer.buyVehicle(hybridCar);
 
         assertEquals(1, customer.getCars().size());
+    }
 
+    @Test
+    public void canSellCar() {
+        customer.addVehicle(hybridCar);
+        customer.sellVehicle(hybridCar);
+
+        assertEquals(45000, customer.getMoney());
     }
 }
