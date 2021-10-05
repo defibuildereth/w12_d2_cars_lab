@@ -13,6 +13,7 @@ public abstract class Vehicle {
     private Chassis chassis;
     private String colour;
     private int price;
+    private int damage;
 
     public Vehicle(Tyres tyres, Gearbox gearbox, Chassis chassis, String colour, int price) {
 
@@ -21,6 +22,7 @@ public abstract class Vehicle {
         this.chassis = chassis;
         this.colour = colour;
         this.price = price;
+        this.damage = 0;
     }
 
     public Engine getEngine() {
@@ -64,10 +66,18 @@ public abstract class Vehicle {
     }
 
     public int getPrice() {
-        return price;
+        return price - damage;
     }
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }

@@ -34,4 +34,12 @@ public class DieselCarTest {
     public void dieselCarHasGearbox() {
         assertEquals(Gearbox.AUTOMATIC, dieselCar.getGearbox());
     }
+
+    @Test
+    public void canAddDamage() {
+        dieselCar.setDamage(400);
+        assertEquals(19600, dieselCar.getPrice());
+    }
 }
+
+
