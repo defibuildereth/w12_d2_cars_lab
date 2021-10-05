@@ -20,6 +20,6 @@ public class ChassisTest {
 
     @Test
     public void carHasChassis() {
-        assertEquals("SoftTop", electricCar.getChassis());
+        assertEquals("SUV", electricCar.getChassis());
     }
 }
