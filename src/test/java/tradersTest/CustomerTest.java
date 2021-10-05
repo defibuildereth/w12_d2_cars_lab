@@ -61,4 +61,11 @@ public class CustomerTest {
 
         assertEquals(45000, customer.getMoney());
     }
+
+    @Test
+    public void cantSellUnownedCar() {
+        customer.sellVehicle(hybridCar);
+
+        assertEquals(25000, customer.getMoney());
+    }
 }

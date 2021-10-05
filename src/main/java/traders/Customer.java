@@ -43,8 +43,10 @@ public class Customer implements ITradeVehicles {
     }
 
     public void sellVehicle(Vehicle vehicle) {
+        if (this.cars.contains(vehicle)) {
         removeVehicle(vehicle);
         addMoney(vehicle.getPrice());
+        }
     }
 
     public void addVehicle(Vehicle vehicle) {
