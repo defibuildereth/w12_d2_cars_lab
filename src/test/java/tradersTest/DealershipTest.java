@@ -38,4 +38,12 @@ public class DealershipTest {
         dealership.addVehicle(electricCar);
         assertEquals(2, dealership.getStock().size());
     }
+
+    @Test
+    public void canRepairVehicle() {
+        electricCar.setDamage(500);
+        dealership.repairDamage(electricCar);
+        assertEquals(0, electricCar.getDamage());
+        assertEquals(54500, dealership.getMoney());
+    }
 }

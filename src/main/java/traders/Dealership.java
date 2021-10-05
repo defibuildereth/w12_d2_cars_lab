@@ -65,5 +65,11 @@ public class Dealership implements ITradeVehicles {
     public void addVehicle(Vehicle vehicle) {
         this.stock.add(vehicle);
     }
+
+    public void repairDamage(Vehicle vehicle) {
+        int amount = vehicle.getDamage();
+        this.reduceMoney(amount);
+        vehicle.setDamage(0);
+    }
     }
 
