@@ -10,16 +10,20 @@ import static org.junit.Assert.assertEquals;
 
 public class ChassisTest {
 
-    Chassis chassis;
-    ElectricCar electricCar;
+//    Chassis chassis;
+//    ElectricCar electricCar;
+//    Tyres tyres;
+//    Gearbox gearbox;
+//    String colour;
+//    int price;
 
-    @Before
-    public void before() {
-        electricCar = new electricCar(tyres, gearbox, chassis, colour, price);
-    }
-
-    @Test
-    public void carHasChassis() {
-        assertEquals("SUV", electricCar.getChassis());
-    }
+//    @Before
+//    public void before() {
+//        electricCar = new ElectricCar(tyres, gearbox, chassis, colour, price);
+//    }
+//
+//    @Test
+//    public void carHasChassis() {
+//        assertEquals("SUV", electricCar.getChassis());
+//    }
 }

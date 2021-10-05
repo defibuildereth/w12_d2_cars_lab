@@ -7,15 +7,15 @@ import parts.Tyres;
 
 public abstract class Vehicle {
 
-    private Engine engine;
+    protected Engine engine;
     private Tyres tyres;
     private Gearbox gearbox;
     private Chassis chassis;
     private String colour;
     private int price;
 
-    public Vehicle(Engine engine, Tyres tyres, Gearbox gearbox, Chassis chassis, String colour, int price) {
-        this.engine = engine;
+    public Vehicle(Tyres tyres, Gearbox gearbox, Chassis chassis, String colour, int price) {
+
         this.tyres = tyres;
         this.gearbox = gearbox;
         this.chassis = chassis;
