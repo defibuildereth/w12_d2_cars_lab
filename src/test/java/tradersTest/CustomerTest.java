@@ -42,6 +42,16 @@ public class CustomerTest {
     @Test
     public void canBuyCar() {
         customer.buyVehicle(hybridCar);
+        
         assertEquals(1, customer.getCars().size());
+    }
+    
+    @Test
+    public void cantBuy2Cars() {
+        customer.buyVehicle(hybridCar);
+        customer.buyVehicle(hybridCar);
+
+        assertEquals(1, customer.getCars().size());
+
     }
 }

@@ -44,7 +44,7 @@ public class Customer implements ITradeVehicles {
 
     public void sellVehicle(Vehicle vehicle) {
         removeVehicle(vehicle);
-        reduceMoney(vehicle.getPrice());
+        addMoney(vehicle.getPrice());
     }
 
     public void addVehicle(Vehicle vehicle) {
@@ -56,8 +56,10 @@ public class Customer implements ITradeVehicles {
     }
 
     public void buyVehicle(Vehicle vehicle) {
+        if (this.money > vehicle.getPrice()) {
         addVehicle(vehicle);
-        addMoney(vehicle.getPrice());
+        reduceMoney(vehicle.getPrice());
+        }
     }
 
 
