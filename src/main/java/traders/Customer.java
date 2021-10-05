@@ -34,17 +34,17 @@ public class Customer implements ITradeVehicles {
     }
 
     public void removeVehicle(Vehicle vehicle) {
-        int index = this.cars.indexOf(vehicle);
-        this.cars.remove(index);
+        this.cars.remove(vehicle);
     }
 
     public void reduceMoney(int price) {
         this.money -= price;
     }
 
-    public void sellVehicle(Vehicle vehicle) {
+    public void sellVehicle(Vehicle vehicle, ITradeVehicles buyer) {
         if (this.cars.contains(vehicle)) {
         removeVehicle(vehicle);
+        buyer.reduceMoney(vehicle.getPrice());
         addMoney(vehicle.getPrice());
         }
     }
@@ -57,10 +57,12 @@ public class Customer implements ITradeVehicles {
         this.money += price;
     }
 
-    public void buyVehicle(Vehicle vehicle) {
+    public void buyVehicle(Vehicle vehicle, ITradeVehicles seller) {
         if (this.money > vehicle.getPrice()) {
-        addVehicle(vehicle);
-        reduceMoney(vehicle.getPrice());
+            addVehicle(vehicle);
+            reduceMoney(vehicle.getPrice());
+            seller.addMoney(vehicle.getPrice());
+            seller.removeVehicle(vehicle);
         }
     }
 
